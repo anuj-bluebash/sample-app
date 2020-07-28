@@ -1,0 +1,38 @@
+<a href=<%= root_path(worker_test: true)%>>Click here to test worker</a>
+<%=User.first.name%>
+
+</br>
+
+</br>
+
+credential test: <%=Rails.application.credentials.dig(:credential_test)%>
+
+</br>
+</br>
+
+DB ENVs TEST
+</br>
+  user: <%=ENV['DB_USER_NAME']%>
+</br>
+
+  password: <%=ENV['DB_PASSWORD']%>
+</br>
+
+  DB host: <%=ENV['DB_HOST']%> 
+</br>
+
+  DEVELOPMENT database: <%=ENV['DEVELOPMENT_DB_NAME']%>
+</br>
+
+
+</br>
+  TEST database: <%=ENV['TEST_DB_NAME']%>
+
+</br>
+  Staging database: <%=ENV['STAGING_DB_NAME']%>
+
+</br>
+  UAT database: <%=ENV['UAT_DB_NAME']%>
+
+</br>
+  PRODUCTION database: <%=ENV['PRODUCTION_DB_NAME']%>

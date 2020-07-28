@@ -1,0 +1,23 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/itrust
+permissions:
+  - object: /opt/itrust
+    owner: itrust
+    group: itrust
+    pattern: "*"
+hooks:
+  ApplicationStop:
+    - location: deployment_scripts/stop.sh
+      runas: root
+  BeforeInstall:
+    - location: deployment_scripts/backup.sh
+      runas: root
+  AfterInstall:
+    - location: deployment_scripts/db-config.sh
+      runas: root
+  ApplicationStart:
+    - location: deployment_scripts/startup.sh
+      runas: root
